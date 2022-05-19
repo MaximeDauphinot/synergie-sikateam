@@ -16,13 +16,13 @@ const ViewportBlock = (props) => {
   const ref = useRef();
   const { inViewport } = useInViewport(ref);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormValues({
+  //     ...formValues,
+  //     [name]: value,
+  //   });
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
