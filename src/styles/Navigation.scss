@@ -1,0 +1,82 @@
+.navigation {
+  display: flex;
+  background-color: #fff;
+  border-color: rgba(231, 231, 231, 0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 10px 75px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  &.mobile {
+    padding: 0;
+    height: 80px;
+    max-width: 600px;
+  }
+
+  .title-container {
+    display: flex;
+    align-self: flex-start;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    &.mobile {
+      font-size: 1rem;
+      align-self: center;
+      padding-left: 25px;
+    }
+
+    a {
+      color: #333;
+      text-transform: uppercase;
+      text-decoration: none;
+      margin: 15px 0px;
+    }
+  }
+
+  .list-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: large;
+
+    &.mobile {
+      padding-right: 25px;
+
+      .svg-icons {
+        transform: scale(1.5);
+      }
+
+      .MuiMenuItem-root {
+        min-width: 110px;
+        display: flex;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+    }
+
+    .MuiList-root {
+      display: flex;
+    }
+    a {
+      font-size: 1rem;
+      color: #333;
+      text-decoration: none;
+    }
+  }
+}
+
+.MuiMenuItem-root {
+  min-width: 140px;
+  display: flex;
+  justify-content: center;
+
+  a {
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+  }
+}

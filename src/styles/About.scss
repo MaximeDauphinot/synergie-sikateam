@@ -1,0 +1,101 @@
+.about-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px;
+
+  .container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    font-family: "Raleway", sans-serif;
+    width: 100%;
+    max-width: 1170px;
+
+    .picture-container {
+      width: 50%;
+      padding: 0px 15px;
+
+      img {
+        width: 520px;
+        margin-top: 10px;
+        background: #fff;
+        border-right: 0;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+      }
+    }
+    .description-container {
+      width: 50%;
+      padding: 0px 15px;
+
+      .about-title-text-container {
+        text-align: initial;
+      }
+
+      .about-title-text-container > h2 {
+        text-transform: uppercase;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        font-weight: 800;
+        font-size: 2.25rem;
+        color: #333;
+        line-height: 1.1;
+
+        h2 {
+          margin: 0 0 20px 0;
+        }
+      }
+
+      .about-title-text-container > h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #333;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .about-title-text-container > p {
+        font-size: 1rem;
+        line-height: 24px;
+        margin: 20px 0;
+        color: #777;
+        font-weight: 400;
+      }
+
+      .list-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 500px;
+
+        .MuiList-root {
+          margin: 0;
+          padding: 0;
+
+          .MuiListItem-root {
+            margin: 0;
+            padding: 0;
+
+            &:before {
+              content: "✔";
+              font-family: "FontAwesome";
+              color: #5ca9fb;
+              font-size: 11px;
+              font-weight: 300;
+              padding-right: 8px;
+            }
+
+            .MuiListItemText-root {
+              color: #777;
+              font-size: 1rem;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

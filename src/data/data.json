@@ -1,0 +1,57 @@
+{
+  "Header": {
+    "title": "Synergie Sika Team",
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum.",
+    "button": "En savoir plus"
+  },
+  "Features": {
+    "title": "Features",
+    "content": [
+      {
+        "name": "Features",
+        "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      },
+      {
+        "name": "About",
+        "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      },
+      {
+        "name": "Services",
+        "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      },
+      {
+        "name": "Gallery",
+        "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      }
+    ]
+  },
+  "About": {
+    "title": "About us",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "secondTitle": "Why Choose Us?",
+    "firstList": [
+      "Lorem ipsum dolor",
+      "Tempor incididunt",
+      "Lorem ipsum dolor",
+      "Incididunt ut labore"
+    ],
+    "secondList": [
+      "Aliquip ex ea commodo",
+      "Lorem ipsum dolor",
+      "Exercitation ullamco",
+      "Lorem ipsum dolor"
+    ]
+  },
+  "Contact": {
+    "title": "Get in touch",
+    "text": "Please fill out the form below to send us an email and we will get back to you as soon as possible.",
+    "button": "Send Message",
+    "contact": "Contact Infos",
+    "itemOne": "Adress",
+    "contentItemOne": "4321 California St, San Francisco, CA 12345",
+    "itemTwo": "Phone",
+    "contentItemTwo": "+1 123 456 1234",
+    "itemThree": "Email",
+    "contentItemThree": "info@company.com"
+  }
+}
