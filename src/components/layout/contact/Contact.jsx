@@ -1,18 +1,18 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { useInViewport } from "react-in-viewport";
 import { Typography, TextField, Box, Grid, Button } from "@mui/material";
 import { Animated } from "react-animated-css";
 
 import "../../../styles/Contact.scss";
 
-const defaultValues = {
-  name: "",
-  email: "",
-  message: "",
-};
+// const defaultValues = {
+//   name: "",
+//   email: "",
+//   message: "",
+// };
 
 const ViewportBlock = (props) => {
-  const [formValues, setFormValues] = useState(defaultValues);
+  // const [formValues, setFormValues] = useState(defaultValues);
   const ref = useRef();
   const { inViewport } = useInViewport(ref);
 
@@ -26,7 +26,7 @@ const ViewportBlock = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formValues);
+    // console.log(formValues);
   };
 
   return (
