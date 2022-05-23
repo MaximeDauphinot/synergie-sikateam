@@ -13,6 +13,7 @@ function App() {
   const [landingPageData, setLandingPageData] = useState({});
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobileMd = useMediaQuery(theme.breakpoints.down("md"));
 
   useEffect(() => {
     setLandingPageData(JsonData);
@@ -23,7 +24,11 @@ function App() {
       <Navigation isMobile={isMobile} />
       <Header data={landingPageData.Header} isMobile={isMobile} />
       <Features data={landingPageData.Features} isMobile={isMobile} />
-      <About data={landingPageData.About} isMobile={isMobile} />
+      <About
+        data={landingPageData.About}
+        isMobile={isMobile}
+        isMobileMd={isMobileMd}
+      />
       <Contact data={landingPageData.Contact} isMobile={isMobile} />
     </div>
   );

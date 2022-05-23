@@ -7,7 +7,7 @@ import { useInViewport } from "react-in-viewport";
 
 import "../../../styles/Features.scss";
 
-const ViewportBlock = ({ data, isMobile }) => {
+const ViewportBlock = ({ data }) => {
   const ref = useRef();
   const { inViewport } = useInViewport(ref);
 
@@ -24,7 +24,7 @@ const ViewportBlock = ({ data, isMobile }) => {
           </Animated>
           <Grid container className="features-content-container">
             {data.content.map((item, index) => (
-              <Grid key={index} item sm={12} md={3}>
+              <Grid key={index} item xs={12} sm={6} md={3}>
                 <Animated
                   animationIn="bounceInRight"
                   animationInDuration={2000}
@@ -50,7 +50,7 @@ const ViewportBlock = ({ data, isMobile }) => {
 export const Features = ({ data, isMobile }) => {
   return (
     <div id="features" className={`features-container ${isMobile && `mobile`}`}>
-      <ViewportBlock data={data} isMobile={isMobile} />
+      <ViewportBlock data={data} />
     </div>
   );
 };

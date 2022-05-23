@@ -1,42 +1,48 @@
 import { useRef } from "react";
-import { Typography, List, ListItem, ListItemText } from "@mui/material";
+import { Typography, List, ListItem, ListItemText, Grid } from "@mui/material";
 import { Animated } from "react-animated-css";
 import { useInViewport } from "react-in-viewport";
 
 import "../../../styles/About.scss";
 
-const ViewportBlock = (props) => {
+const ViewportBlock = ({ data, isMobile, isMobileMd }) => {
   const ref = useRef();
   const { inViewport } = useInViewport(ref);
 
   return (
     <div className="container" ref={ref}>
       {inViewport && (
-        <>
-          <div className="picture-container">
+        <Grid container>
+          <Grid
+            item
+            sm={0}
+            className={`picture-container ${isMobile && `mobile`} ${
+              isMobileMd && `mobileMd`
+            }`}
+          >
             <Animated animationIn="fadeInLeft" animationInDuration={3000}>
               <img src="./img/portfolio/01-large.jpg" alt="sample" />
             </Animated>
-          </div>
-          <div className="description-container">
+          </Grid>
+          <Grid item xs={12} md={6} className="description-container">
             <div className="about-title-text-container">
               <Typography component="h2">
                 <Animated animationIn="fadeInUp" animationInDuration={2000}>
-                  {props.data ? props.data.title : "Chargement..."}
+                  {data ? data.title : "Chargement..."}
                 </Animated>
               </Typography>
               <Typography component="p">
-                {props.data ? props.data.text : "Chargement..."}
+                {data ? data.text : "Chargement..."}
               </Typography>
               <Typography component="h3">
                 <Animated animationIn="fadeInRight" animationInDuration={2000}>
-                  {props.data ? props.data.secondTitle : "Chargement..."}
+                  {data ? data.secondTitle : "Chargement..."}
                 </Animated>
               </Typography>
             </div>
             <div className="list-container">
               <List dense>
-                {props.data.firstList.map((listText, index) => (
+                {data.firstList.map((listText, index) => (
                   <Animated
                     animationIn="fadeInRight"
                     animationInDuration={2000}
@@ -50,7 +56,7 @@ const ViewportBlock = (props) => {
                 ))}
               </List>
               <List dense>
-                {props.data.secondList.map((listText, index) => (
+                {data.secondList.map((listText, index) => (
                   <Animated
                     animationIn="fadeInRight"
                     animationInDuration={2000}
@@ -64,17 +70,17 @@ const ViewportBlock = (props) => {
                 ))}
               </List>
             </div>
-          </div>
-        </>
+          </Grid>
+        </Grid>
       )}
     </div>
   );
 };
 
-export const About = (props) => {
+export const About = ({ data, isMobile, isMobileMd }) => {
   return (
-    <div id="about" className="about-container">
-      <ViewportBlock data={props.data} />
+    <div id="about" className={`about-container ${isMobile && `mobile`}`}>
+      <ViewportBlock data={data} isMobile={isMobile} isMobileMd={isMobileMd} />
     </div>
   );
 };
