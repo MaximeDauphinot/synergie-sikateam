@@ -3,13 +3,13 @@ import { Animated } from "react-animated-css";
 import { Typography, Grid, Box } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import FolderIcon from "@mui/icons-material/Folder";
-import { useInViewport } from "react-in-viewport";
+// import { useInViewport } from "react-in-viewport";
 
 import "../../../styles/Features.scss";
 
 const ViewportBlock = ({ data }) => {
   const ref = useRef();
-  const { inViewport } = useInViewport(ref);
+  // const { inViewport } = useInViewport(ref);
 
   return (
     <div className="container" ref={ref}>

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useInViewport } from "react-in-viewport";
+// import { useInViewport } from "react-in-viewport";
 import { Typography, TextField, Box, Grid, Button } from "@mui/material";
 import { Animated } from "react-animated-css";
 
@@ -14,7 +14,7 @@ import "../../../styles/Contact.scss";
 const ViewportBlock = ({ data, isMobile }) => {
   // const [formValues, setFormValues] = useState(defaultValues);
   const ref = useRef();
-  const { inViewport } = useInViewport(ref);
+  // const { inViewport } = useInViewport(ref);
 
   // const handleInputChange = (e) => {
   //   const { name, value } = e.target;

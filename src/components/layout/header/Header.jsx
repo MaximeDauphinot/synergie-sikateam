@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Typography, Button, Link } from "@mui/material";
 import { Animated } from "react-animated-css";
 import { Slide } from "react-slideshow-image";
-import { useInViewport } from "react-in-viewport";
+// import { useInViewport } from "react-in-viewport";
 import "react-slideshow-image/dist/styles.css";
 
 import "../../../styles/Header.scss";
@@ -16,7 +16,7 @@ const slideImages = [
 
 const ViewportBlock = ({ data, isMobile }) => {
   const ref = useRef();
-  const { inViewport } = useInViewport(ref);
+  // const { inViewport } = useInViewport(ref);
 
   return (
     <div ref={ref}>

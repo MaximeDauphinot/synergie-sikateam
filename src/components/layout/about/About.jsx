@@ -1,13 +1,13 @@
 import { useRef } from "react";
 import { Typography, List, ListItem, ListItemText, Grid } from "@mui/material";
 import { Animated } from "react-animated-css";
-import { useInViewport } from "react-in-viewport";
+// import { useInViewport } from "react-in-viewport";
 
 import "../../../styles/About.scss";
 
 const ViewportBlock = ({ data, isMobile, isMobileMd }) => {
   const ref = useRef();
-  const { inViewport } = useInViewport(ref);
+  // const { inViewport } = useInViewport(ref);
 
   return (
     <div className="container" ref={ref}>
