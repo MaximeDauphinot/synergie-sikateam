@@ -55,8 +55,8 @@ export const Navigation = ({ isMobile }) => {
                   sx={{ zIndex: 4 }}
                 >
                   {navigationListItem.map((item, i) => (
-                    <a href={item.url} onClick={handleClose}>
-                      <MenuItem key={i}>{item.name}</MenuItem>
+                    <a href={item.url} onClick={handleClose} key={i}>
+                      <MenuItem>{item.name}</MenuItem>
                     </a>
                   ))}
                 </Menu>
