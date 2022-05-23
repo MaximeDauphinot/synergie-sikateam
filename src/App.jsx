@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { useTheme, useMediaQuery } from "@mui/material";
 
 import "./App.css";
@@ -10,14 +10,14 @@ import { About } from "./components/layout/about/About";
 import { Contact } from "./components/layout/contact/Contact";
 
 function App() {
-  const [landingPageData, setLandingPageData] = useState({});
+  // const [landingPageData, setLandingPageData] = useState({});
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isMobileMd = useMediaQuery(theme.breakpoints.down("md"));
 
-  useEffect(() => {
-    setLandingPageData(JsonData);
-  }, []);
+  // useEffect(() => {
+  //   setLandingPageData(JsonData);
+  // }, []);
 
   return (
     <div className="App">
