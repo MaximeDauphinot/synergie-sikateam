@@ -20,31 +20,31 @@ const ViewportBlock = ({ data, isMobile }) => {
 
   return (
     <div ref={ref}>
-      {inViewport && (
-        <>
-          <Animated animationIn="bounceInLeft" animationInDuration={2000}>
-            <div className={`header-title-container ${isMobile && `mobile`}`}>
-              <Typography component="h1">
-                {data ? data.title : "Chargement..."}
-              </Typography>
-            </div>
-          </Animated>
-          <Animated animationIn="bounceInRight" animationInDuration={2000}>
-            <div className="header-paragraphe-container">
-              <Typography component="p">
-                {data ? data.paragraph : "Chargement..."}
-              </Typography>
-            </div>
-          </Animated>
-          <Animated animationIn="bounceInUp" animationInDuration={2000}>
-            <Button variant="contained" className="header-button">
-              <Link href="#" underline="none" color="inherit">
-                {data && data.button}
-              </Link>
-            </Button>
-          </Animated>
-        </>
-      )}
+      {/* {inViewport && ( */}
+      <>
+        <Animated animationIn="bounceInLeft" animationInDuration={2000}>
+          <div className={`header-title-container ${isMobile && `mobile`}`}>
+            <Typography component="h1">
+              {data ? data.title : "Chargement..."}
+            </Typography>
+          </div>
+        </Animated>
+        <Animated animationIn="bounceInRight" animationInDuration={2000}>
+          <div className="header-paragraphe-container">
+            <Typography component="p">
+              {data ? data.paragraph : "Chargement..."}
+            </Typography>
+          </div>
+        </Animated>
+        <Animated animationIn="bounceInUp" animationInDuration={2000}>
+          <Button variant="contained" className="header-button">
+            <Link href="#" underline="none" color="inherit">
+              {data && data.button}
+            </Link>
+          </Button>
+        </Animated>
+      </>
+      {/* )} */}
     </div>
   );
 };
