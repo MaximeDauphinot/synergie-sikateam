@@ -1,4 +1,4 @@
-import { useRef } from "react";
+// import { useRef } from "react";
 import { Typography, Button, Link } from "@mui/material";
 import { Animated } from "react-animated-css";
 import { Slide } from "react-slideshow-image";
@@ -14,40 +14,40 @@ const slideImages = [
   "./img/carousel/data05.jpeg",
 ];
 
-const ViewportBlock = ({ data, isMobile }) => {
-  const ref = useRef();
-  // const { inViewport } = useInViewport(ref);
+// const ViewportBlock = ({ data, isMobile }) => {
+//   const ref = useRef();
+//   // const { inViewport } = useInViewport(ref);
 
-  return (
-    <div ref={ref}>
-      {/* {inViewport && ( */}
-      <>
-        <Animated animationIn="bounceInLeft" animationInDuration={2000}>
-          <div className={`header-title-container ${isMobile && `mobile`}`}>
-            <Typography component="h1">
-              {data ? data.title : "Chargement..."}
-            </Typography>
-          </div>
-        </Animated>
-        <Animated animationIn="bounceInRight" animationInDuration={2000}>
-          <div className="header-paragraphe-container">
-            <Typography component="p">
-              {data ? data.paragraph : "Chargement..."}
-            </Typography>
-          </div>
-        </Animated>
-        <Animated animationIn="bounceInUp" animationInDuration={2000}>
-          <Button variant="contained" className="header-button">
-            <Link href="#" underline="none" color="inherit">
-              {data && data.button}
-            </Link>
-          </Button>
-        </Animated>
-      </>
-      {/* )} */}
-    </div>
-  );
-};
+//   return (
+//     <div ref={ref}>
+//       {/* {inViewport && ( */}
+//       <>
+//         <Animated animationIn="bounceInLeft" animationInDuration={2000}>
+//           <div className={`header-title-container ${isMobile && `mobile`}`}>
+//             <Typography component="h1">
+//               {data ? data.title : "Chargement..."}
+//             </Typography>
+//           </div>
+//         </Animated>
+//         <Animated animationIn="bounceInRight" animationInDuration={2000}>
+//           <div className="header-paragraphe-container">
+//             <Typography component="p">
+//               {data ? data.paragraph : "Chargement..."}
+//             </Typography>
+//           </div>
+//         </Animated>
+//         <Animated animationIn="bounceInUp" animationInDuration={2000}>
+//           <Button variant="contained" className="header-button">
+//             <Link href="#" underline="none" color="inherit">
+//               {data && data.button}
+//             </Link>
+//           </Button>
+//         </Animated>
+//       </>
+//       {/* )} */}
+//     </div>
+//   );
+// };
 
 export const Header = ({ data, isMobile }) => {
   const properties = {
@@ -72,7 +72,30 @@ export const Header = ({ data, isMobile }) => {
       </div>
       <div className="overlay">
         <div className="container">
-          <ViewportBlock data={data} isMobile={isMobile} />
+          {/* <ViewportBlock data={data} isMobile={isMobile} /> */}
+          <div>
+            <Animated animationIn="bounceInLeft" animationInDuration={2000}>
+              <div className={`header-title-container ${isMobile && `mobile`}`}>
+                <Typography component="h1">
+                  {data ? data.title : "Chargement..."}
+                </Typography>
+              </div>
+            </Animated>
+            <Animated animationIn="bounceInRight" animationInDuration={2000}>
+              <div className="header-paragraphe-container">
+                <Typography component="p">
+                  {data ? data.paragraph : "Chargement..."}
+                </Typography>
+              </div>
+            </Animated>
+            <Animated animationIn="bounceInUp" animationInDuration={2000}>
+              <Button variant="contained" className="header-button">
+                <Link href="#" underline="none" color="inherit">
+                  {data && data.button}
+                </Link>
+              </Button>
+            </Animated>
+          </div>
         </div>
       </div>
     </div>

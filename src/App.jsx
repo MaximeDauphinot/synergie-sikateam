@@ -22,14 +22,14 @@ function App() {
   return (
     <div className="App">
       <Navigation isMobile={isMobile} />
-      <Header data={landingPageData.Header} isMobile={isMobile} />
-      <Features data={landingPageData.Features} isMobile={isMobile} />
+      <Header data={JsonData.Header} isMobile={isMobile} />
+      <Features data={JsonData.Features} isMobile={isMobile} />
       <About
-        data={landingPageData.About}
+        data={JsonData.About}
         isMobile={isMobile}
         isMobileMd={isMobileMd}
       />
-      <Contact data={landingPageData.Contact} isMobile={isMobile} />
+      <Contact data={JsonData.Contact} isMobile={isMobile} />
     </div>
   );
 }
