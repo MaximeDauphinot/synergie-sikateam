@@ -28,51 +28,51 @@ export const Navigation = ({ isMobile }) => {
   };
 
   return (
-    <Grid container className={`navigation ${isMobile && `mobile`}`}>
-      <Grid item xs={6} className={`title-container ${isMobile && `mobile`}`}>
-        <a href="#top">Synergie Sika Team</a>
-      </Grid>
-      <Grid
-        item
-        xs={6}
-        className={`list-item-container ${isMobile && `mobile`}`}
-      >
-        <Grid item md={6}>
-          {isMobile ? (
-            <>
-              <IconButton size="large" onClick={handleClick}>
-                <MenuIcon className="svg-icons" />
-              </IconButton>
-              <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  "aria-labelledby": "basic-button",
-                }}
-                sx={{ zIndex: 4 }}
-              >
+    <div className={`navigation ${isMobile && `mobile`}`}>
+      <Grid container>
+        <Grid item xs={6} className={`title-container ${isMobile && `mobile`}`}>
+          <a href="#top">Synergie Sika Team</a>
+        </Grid>
+        <Grid
+          item
+          xs={6}
+          className={`list-item-container ${isMobile && `mobile`}`}
+        >
+          <Grid item md={6}>
+            {isMobile ? (
+              <>
+                <IconButton size="large" onClick={handleClick}>
+                  <MenuIcon className="svg-icons" />
+                </IconButton>
+                <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    "aria-labelledby": "basic-button",
+                  }}
+                  sx={{ zIndex: 4 }}
+                >
+                  {navigationListItem.map((item, i) => (
+                    <MenuItem key={i} onClick={handleClose}>
+                      <a href={item.url}>{item.name}</a>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </>
+            ) : (
+              <List>
                 {navigationListItem.map((item, i) => (
-                  <MenuItem key={i}>
-                    <a href={item.url} onClick={handleClose}>
-                      {item.name}
-                    </a>
-                  </MenuItem>
+                  <ListItem key={i} className="list-item">
+                    <a href={item.url}>{item.name}</a>
+                  </ListItem>
                 ))}
-              </Menu>
-            </>
-          ) : (
-            <List>
-              {navigationListItem.map((item, i) => (
-                <ListItem key={i} className="list-item">
-                  <a href={item.url}>{item.name}</a>
-                </ListItem>
-              ))}
-            </List>
-          )}
+              </List>
+            )}
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 };
