@@ -69,14 +69,14 @@
   }
 }
 
-.MuiMenuItem-root {
-  min-width: 140px;
-  display: flex;
-  justify-content: center;
+a {
+  font-size: 1.2rem;
+  color: #333;
+  text-decoration: none;
 
-  a {
-    font-size: 1.2rem;
-    color: #333;
-    text-decoration: none;
+  .MuiMenuItem-root {
+    min-width: 140px;
+    display: flex;
+    justify-content: center;
   }
 }
