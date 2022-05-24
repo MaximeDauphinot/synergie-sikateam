@@ -24,6 +24,7 @@ const ViewportBlock = ({ data, isMobile }) => {
   const { inViewport } = useInViewport(ref);
   const [{ to_name, to_email, message }, setState] = useState(initialState);
   const [loading, setIsloading] = useState(false);
+  const [errorState, setErrorState] = useState(true);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,19 +35,21 @@ const ViewportBlock = ({ data, isMobile }) => {
 
   const handleSubmit = (e) => {
     setIsloading(true);
+    setErrorState(false);
     e.preventDefault();
     console.log(to_name, to_email, message);
     emailjs
       .sendForm(data.service_id, data.template_id, e.target, data.user_id)
       .then(
         (result) => {
-          console.log(result.text);
           setIsloading(false);
           clearState();
+          console.log(result.text);
         },
         (error) => {
-          console.log(error.text);
+          setErrorState(true);
           setIsloading(false);
+          console.log(error.text);
         }
       );
 
@@ -118,14 +121,21 @@ const ViewportBlock = ({ data, isMobile }) => {
                   {loading ? (
                     <CircularProgress />
                   ) : (
-                    <Button
-                      variant="outlined"
-                      size="large"
-                      color="inherit"
-                      type="submit"
-                    >
-                      {data.button}
-                    </Button>
+                    <>
+                      <Button
+                        variant="outlined"
+                        size="large"
+                        color="inherit"
+                        type="submit"
+                      >
+                        {data.button}
+                      </Button>
+                      {errorState && (
+                        <Typography color="error" component={"h1"}>
+                          {data.errorMessage}
+                        </Typography>
+                      )}
+                    </>
                   )}
                 </div>
               </Box>
