@@ -1,32 +1,57 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useInViewport } from "react-in-viewport";
-import { Typography, TextField, Box, Grid, Button } from "@mui/material";
+import {
+  Typography,
+  TextField,
+  Box,
+  Grid,
+  Button,
+  CircularProgress,
+} from "@mui/material";
 import { Animated } from "react-animated-css";
+import emailjs from "emailjs-com";
 
 import "../../../styles/Contact.scss";
 
-// const defaultValues = {
-//   name: "",
-//   email: "",
-//   message: "",
-// };
+const initialState = {
+  to_name: "",
+  to_email: "",
+  message: "",
+};
 
 const ViewportBlock = ({ data, isMobile }) => {
-  // const [formValues, setFormValues] = useState(defaultValues);
   const ref = useRef();
   const { inViewport } = useInViewport(ref);
+  const [{ to_name, to_email, message }, setState] = useState(initialState);
+  const [loading, setIsloading] = useState(false);
 
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormValues({
-  //     ...formValues,
-  //     [name]: value,
-  //   });
-  // };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setState((prevState) => ({ ...prevState, [name]: value }));
+  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // console.log(formValues);
+  const clearState = () => setState({ ...initialState });
+
+  const handleSubmit = (e) => {
+    setIsloading(true);
+    e.preventDefault();
+    console.log(to_name, to_email, message);
+    emailjs
+      .sendForm(data.service_id, data.template_id, e.target, data.user_id)
+      .then(
+        (result) => {
+          console.log(result.text);
+          setIsloading(false);
+          clearState();
+        },
+        (error) => {
+          console.log(error.text);
+          setIsloading(false);
+        }
+      );
+
+    //pour la creation du compte mail
+    //https://medium.com/@skinsfannick/implementing-emailjs-in-react-300989edf380
   };
 
   return (
@@ -60,8 +85,9 @@ const ViewportBlock = ({ data, isMobile }) => {
                       fullWidth
                       id="name"
                       label="Name"
-                      name="name"
-                      autoComplete="given-name"
+                      name="to_name"
+                      autoComplete="name"
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
@@ -70,8 +96,9 @@ const ViewportBlock = ({ data, isMobile }) => {
                       fullWidth
                       id="email"
                       label="Email"
-                      name="email"
+                      name="to_email"
                       autoComplete="email"
+                      onChange={handleChange}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -82,14 +109,24 @@ const ViewportBlock = ({ data, isMobile }) => {
                       id="message"
                       label="Message"
                       name="message"
-                      autoComplete="family-name"
+                      autoComplete="message"
+                      onChange={handleChange}
                     />
                   </Grid>
                 </Grid>
                 <div className="button">
-                  <Button variant="outlined" size="large" color="inherit">
-                    {data.button}
-                  </Button>
+                  {loading ? (
+                    <CircularProgress />
+                  ) : (
+                    <Button
+                      variant="outlined"
+                      size="large"
+                      color="inherit"
+                      type="submit"
+                    >
+                      {data.button}
+                    </Button>
+                  )}
                 </div>
               </Box>
             </div>

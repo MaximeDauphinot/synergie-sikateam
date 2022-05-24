@@ -52,6 +52,11 @@
     "itemTwo": "Phone",
     "contentItemTwo": "+1 123 456 1234",
     "itemThree": "Email",
-    "contentItemThree": "info@company.com"
+    "contentItemThree": "info@company.com",
+    "mailServices": {
+      "service_id": "YOUR_SERVICE_ID",
+      "template_id": "YOUR_TEMPLATE_ID",
+      "user_id": "YOUR_USER_ID"
+    }
   }
 }
